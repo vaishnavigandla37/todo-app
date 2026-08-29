@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝 My To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-tasks"></i> My To-Do List</h1>
+                <p class="subtitle">Stay organized and boost your productivity</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="taskInput" 
+                        class="task-input" 
+                        placeholder="Add a new task..."
+                        autocomplete="off"
+                    >
+                    <select id="prioritySelect" class="priority-select">
+                        <option value="low">🟢 Low</option>
+                        <option value="medium" selected>🟡 Medium</option>
+                        <option value="high">🔴 High</option>
+                    </select>
+                    <button id="addBtn" class="btn btn-add">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                </div>
+            </section>
+
+            <!-- Filter & Sort Section -->
+            <section class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-list"></i> All
+                    </button>
+                    <button class="filter-btn" data-filter="active">
+                        <i class="fas fa-spinner"></i> Active
+                    </button>
+                    <button class="filter-btn" data-filter="completed">
+                        <i class="fas fa-check-circle"></i> Completed
+                    </button>
+                    <button class="filter-btn" data-filter="high">
+                        <i class="fas fa-fire"></i> High Priority
+                    </button>
+                </div>
+                <div class="sort-controls">
+                    <button id="sortBtn" class="btn btn-sort">
+                        <i class="fas fa-sort"></i> Sort
+                    </button>
+                    <button id="clearBtn" class="btn btn-clear">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <span class="stat-label">Total Tasks</span>
+                    <span class="stat-value" id="totalTasks">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Completed</span>
+                    <span class="stat-value completed" id="completedTasks">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Remaining</span>
+                    <span class="stat-value" id="remainingTasks">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Progress</span>
+                    <span class="stat-value" id="progressPercent">0%</span>
+                </div>
+            </section>
+
+            <!-- Tasks List -->
+            <section class="tasks-section">
+                <div id="tasksList" class="tasks-list">
+                    <div class="empty-state">
+                        <i class="fas fa-inbox"></i>
+                        <p>No tasks yet. Add one to get started! 🚀</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>💾 Your tasks are automatically saved to local storage</p>
+            <p class="footer-text">Made with <i class="fas fa-heart"></i> for productivity</p>
+        </footer>
+    </div>
+
+    <script src="storage.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
